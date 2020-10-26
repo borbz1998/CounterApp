@@ -1,15 +1,12 @@
 import React from "react";
-import Counter from "./components/Counter"
-import CounterGroup from "./components/CounterGroup"
 import "./App.css";
-import CounterGroup from "./components/CounterGroup";
+import MultipleCounter from "./components/MultipleCounter";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <Counter />
-       <CounterGroup />
+        <MultipleCounter />
       </header>
     </div>
   );
