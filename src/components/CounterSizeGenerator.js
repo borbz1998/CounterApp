@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CounterGenerator extends Component {
+class CounterSizeGenerator extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class CounterGenerator extends Component {
     }
 }
 
-export default CounterGenerator;
+export default CounterSizeGenerator;
