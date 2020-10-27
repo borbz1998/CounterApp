@@ -7,20 +7,18 @@ class MultipleCounter extends Component {
     constructor(props) {
         super(props);
 
-        this.onGenerate = this.onGenerate.bind(this)
-
         this.state = {
-            sum : 0, 
+            sum: 0,
             size: 0
         };
     }
 
-    onGenerate(size) {
+    onGenerate = (size) => {
         this.setState({ size });
     }
 
     addCounterValues = (addend) => {
-        this.setState((prevState) => ({sum : prevState.sum + addend}));
+        this.setState((prevState) => ({ sum: prevState.sum + addend }));
     }
 
     render() {
@@ -28,9 +26,9 @@ class MultipleCounter extends Component {
             <div>
                 <fieldset>
                     <CounterSizeGenerator onGenerate={this.onGenerate} />
-                    <CounterGroupSum sum={this.state.sum}/>
+                    <CounterGroupSum sum={this.state.sum} />
                 </fieldset>
-                <CounterGroup size={this.state.size} addCounterValues={this.addCounterValues}/>
+                <CounterGroup size={this.state.size} addCounterValues={this.addCounterValues} />
             </div>
         );
     }

@@ -1,0 +1,10 @@
+input#counter{
+    color: white;
+    background-color: black;
+    /* padding: 10px; */
+    margin: 10px;
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    
+};

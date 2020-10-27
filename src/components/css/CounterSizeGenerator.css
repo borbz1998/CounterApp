@@ -1,0 +1,11 @@
+input#size{
+    background-color: black;
+    font-family: Arial;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    width: 100px;
+};
+
+

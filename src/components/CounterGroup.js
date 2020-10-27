@@ -3,12 +3,6 @@ import Counter from './Counter';
 
 class CounterGroup extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.initArray = this.initArray.bind(this);
-    }
-
     initArray(size) {
         const number = size > 0 ? parseInt(size) : 0;
         return Array.from(Array(number).keys());

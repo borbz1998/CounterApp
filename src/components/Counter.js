@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
+import "./css/Counter.css";
 
 class Counter extends Component {
     constructor(props) {
         super(props);
-
-        this.onIncrease = this.onIncrease.bind(this);
-        this.onDecrease = this.onDecrease.bind(this);
 
         this.state = {
             number: 0
         };
     }
 
-    onIncrease() {
+    componentWillUnmount() {
+        this.props.addCounterValues(this.state.number * -1);
+    }
+
+    onIncrease = () => {
         this.setState((prevState) => ({ number: prevState.number + 1 }), () => this.props.addCounterValues(1));
     }
 
-    onDecrease() {
+    onDecrease = () => {
         this.setState((prevState) => ({ number: prevState.number - 1 }), () => this.props.addCounterValues(-1));
     }
 
@@ -28,12 +30,12 @@ class Counter extends Component {
             margin: "10px",
             background: "black",
             fontSize: "30px"
-          };
+        };
         return (
             <section>
-                <input type="button" value="+" onClick={(event) => { this.onIncrease() }} style={mystyle} />
+                <input type="button" id="counter" value="+" onClick={this.onIncrease} />
                 <span>{this.state.number}</span>
-                <input type="button" value="-" onClick={(event) => { this.onDecrease() }} style={mystyle} />
+                <input type="button" id="counter" value="-" onClick={this.onDecrease} />
             </section>
         );
     }
