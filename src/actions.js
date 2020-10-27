@@ -9,3 +9,7 @@ export const increaseSum = () => {
 export const decreaseSum = () => {
     return { type: "DECREASE_SUM" }
 }
+
+export const revertSum = () => {
+    return { type: "REVERT_SUM" }
+}

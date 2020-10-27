@@ -14,24 +14,15 @@ class CounterSizeGenerator extends Component {
     onChange = (event) => {
         const value = event.target.value;
 
-        // this.setState(() => {
-        //     return { size: value };
-        // })
+        this.setState(() => {
+            return { size: value }
+        }, this.props.updateCounterSize(value));
 
-        this.setState({
-            size: value
-        })
-        this.props.updateCounterSize(value);
+        // this.props.revertSum();
         
     }
 
     render() {
-        const mystyle = {
-            color: "black",
-            padding: "10px",
-            fontFamily: "Arial"
-          };
-
         return (
             <div>
                 <label htmlFor="size"></label>

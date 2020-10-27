@@ -14,8 +14,14 @@ const sum = (state = 0, action) => {
     else if (action.type === "DECREASE_SUM") {
         return state - 1;
     }
+    else if (action.type === "REVERT_SUM"){
+        // return state -= action.payload;
+        return state += action.payload * -1;
+    }
+    return state;
 }
 
 export default combineReducers({
-    size
-})
+    size, 
+    sum
+});

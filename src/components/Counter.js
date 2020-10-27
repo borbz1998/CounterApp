@@ -11,17 +11,20 @@ class Counter extends Component {
     }
 
     componentWillUnmount() {
-        this.props.addCounterValues(this.state.number * -1);
+        // this.props.addCounterValues(this.state.number * -1);
+        this.props.revertSum(this.state.number);
     }
 
     onIncrease = () => {
-        this.setState((prevState) => ({ number: prevState.number + 1 }), () => this.props.addCounterValues(1));
-        this.props.increaseSum();
+        // this.setState((prevState) => ({ number: prevState.number + 1 }), () => this.props.addCounterValues(1));
+        this.setState((prevState) => ({number: prevState.number + 1})
+        , this.props.increaseSum());
     }
 
     onDecrease = () => {
-        this.setState((prevState) => ({ number: prevState.number - 1 }), () => this.props.addCounterValues(-1));
-        this.props.decreaseSum();
+        // this.setState((prevState) => ({ number: prevState.number - 1 }), () => this.props.addCounterValues(-1));
+        this.setState((prevState) => ({number: prevState.number - 1})
+        , this.props.decreaseSum());
     }
 
     render() {
