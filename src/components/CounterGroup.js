@@ -10,6 +10,8 @@ class CounterGroup extends Component {
 
     render() {
         const size = this.props.size;
+        console.log(this.props.number + "counterGroup");
+        
         const counterSizeArray = this.initArray(size);
         return (
             <div>{counterSizeArray.map((value) => (

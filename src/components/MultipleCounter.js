@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CounterGroup from "./CounterGroup";
-import CounterSizeGenerator from "./CounterSizeGenerator";
 import CounterGroupSum from './CounterGroupSum';
+import CounterSizeGeneratorContainer from "../containers/CounterSizeGeneratorContainer"
+import CounterGroupContainer from "../containers/CounterGroupContainer"
 
 class MultipleCounter extends Component {
     constructor(props) {
@@ -25,10 +25,10 @@ class MultipleCounter extends Component {
         return (
             <div>
                 <fieldset>
-                    <CounterSizeGenerator onGenerate={this.onGenerate} />
+                    <CounterSizeGeneratorContainer />
                     <CounterGroupSum sum={this.state.sum} />
                 </fieldset>
-                <CounterGroup size={this.state.size} addCounterValues={this.addCounterValues} />
+                <CounterGroupContainer />
             </div>
         );
     }

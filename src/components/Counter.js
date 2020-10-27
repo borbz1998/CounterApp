@@ -16,21 +16,15 @@ class Counter extends Component {
 
     onIncrease = () => {
         this.setState((prevState) => ({ number: prevState.number + 1 }), () => this.props.addCounterValues(1));
+        this.props.increaseSum();
     }
 
     onDecrease = () => {
         this.setState((prevState) => ({ number: prevState.number - 1 }), () => this.props.addCounterValues(-1));
+        this.props.decreaseSum();
     }
 
     render() {
-        const mystyle = {
-            color: "white",
-            padding: "10px",
-            fontFamily: "Arial",
-            margin: "10px",
-            background: "black",
-            fontSize: "30px"
-        };
         return (
             <section>
                 <input type="button" id="counter" value="+" onClick={this.onIncrease} />
