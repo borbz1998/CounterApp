@@ -21,11 +21,19 @@ class Counter extends Component {
     }
 
     render() {
+        const mystyle = {
+            color: "white",
+            padding: "10px",
+            fontFamily: "Arial",
+            margin: "10px",
+            background: "black",
+            fontSize: "30px"
+          };
         return (
             <section>
-                <input type="button" value="+" onClick={(event) => { this.onIncrease() }} />
+                <input type="button" value="+" onClick={(event) => { this.onIncrease() }} style={mystyle} />
                 <span>{this.state.number}</span>
-                <input type="button" value="-" onClick={(event) => { this.onDecrease() }} />
+                <input type="button" value="-" onClick={(event) => { this.onDecrease() }} style={mystyle} />
             </section>
         );
     }
